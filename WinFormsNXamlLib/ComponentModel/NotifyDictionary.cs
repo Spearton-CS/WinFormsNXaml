@@ -29,9 +29,9 @@ namespace WinFormsNXaml.ComponentModel
         /// <inheritdoc/>
         public virtual int Count => values.Count;
         /// <inheritdoc/>
-        public virtual bool IsReadOnly => false;
+        public virtual bool IsReadOnly => values.IsReadOnly;
         /// <inheritdoc/>
-        public virtual event NotifyCollectionChangedEventHandler? CollectionChanged;
+        public event NotifyCollectionChangedEventHandler? CollectionChanged;
         /// <summary>Invokes <see cref="CollectionChanged"/></summary>>
         protected virtual void OnCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e) => CollectionChanged?.Invoke(sender, e);
         /// <inheritdoc/>

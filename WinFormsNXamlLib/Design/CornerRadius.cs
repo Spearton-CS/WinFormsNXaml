@@ -3,14 +3,21 @@ using System.Numerics;
 
 namespace WinFormsNXaml.Design
 {
-    public struct CornerRadius : IEqualityComparer<CornerRadius>, IEqualityOperators<CornerRadius, CornerRadius, bool>, IDivisionOperators<CornerRadius, float, CornerRadius>, IAdditionOperators<CornerRadius, float, CornerRadius>, ISubtractionOperators<CornerRadius, float, CornerRadius>, IMultiplyOperators<CornerRadius, float, CornerRadius>, IIncrementOperators<CornerRadius>, IDecrementOperators<CornerRadius>
+    public struct CornerRadius : IEqualityComparer<CornerRadius>,
+        IEqualityOperators<CornerRadius, CornerRadius, bool>,
+        IDivisionOperators<CornerRadius, float, CornerRadius>,
+        IAdditionOperators<CornerRadius, float, CornerRadius>,
+        ISubtractionOperators<CornerRadius, float, CornerRadius>,
+        IMultiplyOperators<CornerRadius, float, CornerRadius>,
+        IIncrementOperators<CornerRadius>,
+        IDecrementOperators<CornerRadius>
     {
         public CornerRadius(float leftTop, float leftBottom = 0, float rightTop = 0, float rightBottom = 0)
         {
-            ArgumentOutOfRangeException.ThrowIfNegative(leftTop);
-            ArgumentOutOfRangeException.ThrowIfNegative(leftBottom);
-            ArgumentOutOfRangeException.ThrowIfNegative(rightTop);
-            ArgumentOutOfRangeException.ThrowIfNegative(rightBottom);
+            ArgumentOutOfRangeException.ThrowIfNegative(leftTop, nameof(leftTop));
+            ArgumentOutOfRangeException.ThrowIfNegative(leftBottom, nameof(leftBottom));
+            ArgumentOutOfRangeException.ThrowIfNegative(rightTop, nameof(rightTop));
+            ArgumentOutOfRangeException.ThrowIfNegative(rightBottom, nameof(rightBottom));
             LeftTop = leftTop;
             LeftBottom = leftBottom;
             RightTop = rightTop;

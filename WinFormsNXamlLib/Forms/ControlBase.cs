@@ -1,11 +1,13 @@
 ﻿using System.ComponentModel;
 using System.Drawing.Drawing2D;
+using System.Runtime.Versioning;
 using System.Windows.Forms;
 using WinFormsNXaml.Design;
 
 namespace WinFormsNXaml.Forms
 {
     /// <summary>Base for all Controls in WinFormsNXaml</summary>
+    [SupportedOSPlatform("windows")]
     public abstract partial class ControlBase : UserControl, INotifyPropertyChanged
     {
         protected ControlBase(bool init = true)
@@ -95,6 +97,7 @@ namespace WinFormsNXaml.Forms
         //}
         protected override void OnPaint(PaintEventArgs e)
         {
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             OnPaintBackground(e);
             base.OnPaint(e);
         }

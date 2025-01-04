@@ -46,5 +46,15 @@
                 elem = elem.NextElement;
             }
         }
+        public virtual XamlProperty? FirstProperty { get; set; }
+        public virtual IEnumerable<XamlProperty> EnumerateProperties()
+        {
+            XamlProperty? prop = FirstProperty;
+            while (prop is not null)
+            {
+                yield return prop;
+                prop = prop.FirstProperty;
+            }
+        }
     }
 }

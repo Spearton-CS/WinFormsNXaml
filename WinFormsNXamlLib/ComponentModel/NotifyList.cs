@@ -10,7 +10,7 @@ namespace WinFormsNXaml.ComponentModel
         /// <summary>Base collection to change</summary>
         protected IList<T> values;
         /// <summary>Initializes a new instance of the <see cref="NotifyList{T}"/> class through <see cref="List{T}"/>.</summary>
-        public NotifyList() => values = new List<T>();
+        public NotifyList() => values = [];
         /// <summary>Initializes a new instance of the <see cref="NotifyList{T}"/> class through <see cref="IList{T}"/>.</summary>
         /// <param name="values">Collection to changing</param>
         public NotifyList(IList<T> values) => this.values = values;
@@ -28,9 +28,9 @@ namespace WinFormsNXaml.ComponentModel
         /// <inheritdoc/>
         public virtual int Count => values.Count;
         /// <inheritdoc/>
-        public virtual bool IsReadOnly => false;
+        public virtual bool IsReadOnly => values.IsReadOnly;
         /// <inheritdoc/>
-        public virtual event NotifyCollectionChangedEventHandler? CollectionChanged;
+        public event NotifyCollectionChangedEventHandler? CollectionChanged;
         /// <summary>Invokes <see cref="CollectionChanged"/></summary>>
         protected virtual void OnCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e) => CollectionChanged?.Invoke(sender, e);
         /// <inheritdoc/>
