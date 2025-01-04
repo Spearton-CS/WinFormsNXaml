@@ -1,0 +1,9 @@
+﻿WinFormsNXaml - is a project, which goal, is a providing of a good, powerful and simple alternative for WPF;
+
+Reasons to use that project:
+1. Designing WinForms apps using XAML, and optionally C# user code;
+2. Designing cute WinForms apps, which can use Native Controls (default Button, Label and etc.) AND Managed Controls (custom controls, alternatives for native controls and etc.);
+3. Powerful Binding for WinForms;
+4. Providing GDI+ drawing, which simple to use, has good integration with Windows natively and allows to manage your images and etc. directly;
+5. Optimization of some WinForms moments;
+6. Coding and designing speed up;
